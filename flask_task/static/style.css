@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8f9ff
+    );
+
+    color: #25254a;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+    width: 100%;
+
+    padding: 18px 8%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+nav h1 {
+    font-size: 25px;
+
+    color: #5146c9;
+}
+
+
+nav ul {
+    display: flex;
+
+    list-style: none;
+
+    gap: 35px;
+}
+
+
+nav a {
+    text-decoration: none;
+
+    color: #444;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: #5146c9;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 50px 20px;
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ================= PAGE CARD ================= */
+
+.page {
+    width: 100%;
+
+    background: white;
+
+    padding: 55px 60px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(40, 40, 80, 0.12);
+
+    animation: appear 0.4s ease;
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* ================= TEXT ================= */
+
+.small-title {
+    color: #5146c9;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.page h2 {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+
+    color: #25254a;
+}
+
+
+.description {
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+
+    line-height: 1.7;
+
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* ================= BUTTON ================= */
+
+button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    background-color: #5146c9;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    background-color: #3e35a3;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= PROFILE ================= */
+
+article {
+    max-width: 600px;
+
+    margin: 25px auto 0;
+
+    text-align: left;
+}
+
+
+article p {
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background-color: #f7f7ff;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+article strong {
+    color: #5146c9;
+}
+
+
+article span {
+    color: #555;
+
+    text-align: right;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skill-list {
+    max-width: 500px;
+
+    margin: 25px auto 0;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.skill-list li {
+    padding: 18px;
+
+    background-color: #f1f0ff;
+
+    color: #5146c9;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    border: 1px solid #e2e0ff;
+
+    transition: 0.3s;
+}
+
+
+.skill-list li:hover {
+    transform: translateY(-3px);
+
+    background-color: #e7e5ff;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 18px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 18px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    nav ul {
+        gap: 20px;
+    }
+
+
+    main {
+        padding: 30px 15px;
+    }
+
+
+    .page {
+        padding: 40px 25px;
+    }
+
+
+    .page h2 {
+        font-size: 28px;
+    }
+
+
+    article p {
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+
+    article span {
+        text-align: left;
+    }
+
+
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+
+}

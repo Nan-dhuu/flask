@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nandhini | Mini Project</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <nav>
+
+        <h1>Nandhini</h1>
+
+        <ul>
+
+            <li>
+                <a href="#" onclick="showPage('home')">Home</a>
+            </li>
+
+            <li>
+                <a href="#" onclick="showPage('profile')">Profile</a>
+            </li>
+
+            <li>
+                <a href="#" onclick="showPage('skills')">Skills</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+
+        <!-- Home -->
+
+        <section id="home" class="page">
+
+            <p class="small-title">WELCOME TO MY WEBSITE</p>
+
+            <h2>Hello, I'm {{ name }} 👋</h2>
+
+            <p class="description">
+                I am a B.Tech Information Technology student
+                interested in software development and web technologies.
+            </p>
+
+            <button onclick="showPage('profile')">
+                View My Profile
+            </button>
+
+        </section>
+
+
+        <!-- Profile -->
+
+        <section id="profile" class="page hidden">
+
+            <p class="small-title">ABOUT ME</p>
+
+            <h2>My Profile</h2>
+
+            <article>
+
+                <p>
+                    <strong>Name</strong>
+                    <span>{{ name }}</span>
+                </p>
+
+                <p>
+                    <strong>Course</strong>
+                    <span>{{ course }}</span>
+                </p>
+
+                <p>
+                    <strong>College</strong>
+                    <span>{{ college }}</span>
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Skills -->
+
+        <section id="skills" class="page hidden">
+
+            <p class="small-title">TECHNICAL KNOWLEDGE</p>
+
+            <h2>My Skills</h2>
+
+            <ul class="skill-list">
+
+                {% for skill in skills %}
+
+                <li>
+                    {{ skill }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function showPage(page) {
+
+            document.getElementById("home").classList.add("hidden");
+
+            document.getElementById("profile").classList.add("hidden");
+
+            document.getElementById("skills").classList.add("hidden");
+
+            document.getElementById(page).classList.remove("hidden");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
